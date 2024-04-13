@@ -1,0 +1,18 @@
+services:
+  postgresql:
+    image: postgres:latest
+    container_name: 'Postgresql-Shared'
+    cap_add:
+      - SYS_NICE
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: postgresql-env@140
+    ports:
+      - 5432:5432
+    expose:
+      - 5432
+    volumes:
+      - ./postgresql-datavolume:/var/lib/postgresql/data
+volumes:
+  postgresql-datavolume: 
