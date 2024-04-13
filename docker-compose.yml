@@ -14,5 +14,7 @@ services:
       - 5432
     volumes:
       - ./postgresql-datavolume:/var/lib/postgresql/data
+      - ./postgresql-filevolume:/filevolume
 volumes:
   postgresql-datavolume: 
+  postgresql-filevolume: 
